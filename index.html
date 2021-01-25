@@ -149,6 +149,22 @@ window.onload = function (){
 	document.getElementById("seedhex").value = hdseed.seedHex;
 	var explodewords = newmnemo.words.split(" ");
 	var prewords = '<br><br><br>abandon<br><br>ability<br><br>able<br><br>about<br><br>above<br><br>absent<br><br>absorb<br><br>abuse<br><br>cinnamon<br><br>material<br><br>luggage<br><br>scout<br><br>burden<br><br>square<br><br>hat<br><br>trust<br><br>sad<br><br>rain<br><br>teach<br><br>raccoon<br><br>';
+	var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+	if(isFirefox == true){ 
+	var changelines = prewords.slice(0,-15);
+	$("#s1block").html(changelines+explodewords[0]);
+	$("#s2block").html(changelines+explodewords[1]);
+	$("#s3block").html(changelines+explodewords[2]);
+	$("#s4block").html(changelines+explodewords[3]);
+	$("#s5block").html(changelines+explodewords[4]);
+	$("#s6block").html(changelines+explodewords[5]);
+	$("#s7block").html(changelines+explodewords[6]);
+	$("#s8block").html(changelines+explodewords[7]);
+	$("#s9block").html(changelines+explodewords[8]);
+	$("#s10block").html(changelines+explodewords[9]);
+	$("#s11block").html(changelines+explodewords[10]);
+	$("#s12block").html(changelines+explodewords[11]);
+	} else {
 	$("#s1block").html(prewords+explodewords[0]);
 	$("#s2block").html(prewords+explodewords[1]);
 	$("#s3block").html(prewords+explodewords[2]);
@@ -161,6 +177,8 @@ window.onload = function (){
 	$("#s10block").html(prewords+explodewords[9]);
 	$("#s11block").html(prewords+explodewords[10]);
 	$("#s12block").html(prewords+explodewords[11]);
+	}
+	
 }
 
 function spin(){
@@ -211,6 +229,22 @@ function  reset(){
 	document.getElementById("seedhex").value = hdseed.seedHex;
 	var explodewords = newmnemo.words.split(" ");
 	var prewords = '<br><br><br>abandon<br><br>ability<br><br>able<br><br>about<br><br>above<br><br>absent<br><br>absorb<br><br>abuse<br><br>cinnamon<br><br>material<br><br>luggage<br><br>scout<br><br>burden<br><br>square<br><br>hat<br><br>trust<br><br>sad<br><br>rain<br><br>teach<br><br>raccoon<br><br>';
+	var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+	if(isFirefox == true){ 
+	var changelines = prewords.slice(0,-15);
+	$("#s1block").html(changelines+explodewords[0]);
+	$("#s2block").html(changelines+explodewords[1]);
+	$("#s3block").html(changelines+explodewords[2]);
+	$("#s4block").html(changelines+explodewords[3]);
+	$("#s5block").html(changelines+explodewords[4]);
+	$("#s6block").html(changelines+explodewords[5]);
+	$("#s7block").html(changelines+explodewords[6]);
+	$("#s8block").html(changelines+explodewords[7]);
+	$("#s9block").html(changelines+explodewords[8]);
+	$("#s10block").html(changelines+explodewords[9]);
+	$("#s11block").html(changelines+explodewords[10]);
+	$("#s12block").html(changelines+explodewords[11]);
+	} else {
 	$("#s1block").html(prewords+explodewords[0]);
 	$("#s2block").html(prewords+explodewords[1]);
 	$("#s3block").html(prewords+explodewords[2]);
@@ -223,6 +257,7 @@ function  reset(){
 	$("#s10block").html(prewords+explodewords[9]);
 	$("#s11block").html(prewords+explodewords[10]);
 	$("#s12block").html(prewords+explodewords[11]);
+	}
 	$("#output").html('');
 	$("#win").fadeOut(1500);
 }
@@ -247,6 +282,22 @@ function testwin(){
 	document.getElementById("seedhex").value = hdseed.seedHex;
 	var explodewords = newmnemo.words.split(" ");
 	var prewords = '<br><br><br>abandon<br><br>ability<br><br>able<br><br>about<br><br>above<br><br>absent<br><br>absorb<br><br>abuse<br><br>cinnamon<br><br>material<br><br>luggage<br><br>scout<br><br>burden<br><br>square<br><br>hat<br><br>trust<br><br>sad<br><br>rain<br><br>teach<br><br>raccoon<br><br>';
+	var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+	if(isFirefox == true){ 
+	var changelines = prewords.slice(0,-15);
+	$("#s1block").html(changelines+explodewords[0]);
+	$("#s2block").html(changelines+explodewords[1]);
+	$("#s3block").html(changelines+explodewords[2]);
+	$("#s4block").html(changelines+explodewords[3]);
+	$("#s5block").html(changelines+explodewords[4]);
+	$("#s6block").html(changelines+explodewords[5]);
+	$("#s7block").html(changelines+explodewords[6]);
+	$("#s8block").html(changelines+explodewords[7]);
+	$("#s9block").html(changelines+explodewords[8]);
+	$("#s10block").html(changelines+explodewords[9]);
+	$("#s11block").html(changelines+explodewords[10]);
+	$("#s12block").html(changelines+explodewords[11]);
+	} else {
 	$("#s1block").html(prewords+explodewords[0]);
 	$("#s2block").html(prewords+explodewords[1]);
 	$("#s3block").html(prewords+explodewords[2]);
@@ -259,6 +310,7 @@ function testwin(){
 	$("#s10block").html(prewords+explodewords[9]);
 	$("#s11block").html(prewords+explodewords[10]);
 	$("#s12block").html(prewords+explodewords[11]);
+	}
 	$("#output").html('');
 	$("#win").fadeOut(1500);
 	alert("Test initiated, click on Spin");
