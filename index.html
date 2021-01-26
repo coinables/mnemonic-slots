@@ -18,6 +18,7 @@ body, html {
   text-align: center;
   box-shadow: inset 0px 3px 2px #999;
   background-color: #FAFAFA;
+  position: relative;
 }
 .btn{
 	position: relative;
@@ -77,6 +78,10 @@ body, html {
 	font-weight: strong;
 	border: 3px solid #0e0e0e;
 }
+#layer1 span{
+	position: absolute;
+	left: 10px;
+}
 </style>
 <script src="buidl.js"></script>
 <script src="jquery-3.2.1.min.js"></script>
@@ -89,45 +94,46 @@ body, html {
 <div id="layer1">
 <h3>Unlimited Free Spins = Unlimited Fun!</h3>
 <div id="s1" class="slot">
-<span id="s1block" style="position: relative;"></span>
+<span id="s1block" style="position: absolute;"></span>
 </div>
 <div id="s2" class="slot">
-<span id="s2block" style="position: relative;"></span>
+<span id="s2block" style="position: absolute;"></span>
 </div>
 <div id="s3" class="slot">
-<span id="s3block" style="position: relative;"></span>
+<span id="s3block" style="position: absolute;"></span>
 </div>
 <div id="s4" class="slot">
-<span id="s4block" style="position: relative;"></span>
+<span id="s4block" style="position: absolute;"></span>
 </div>
 <div id="s5" class="slot">
-<span id="s5block" style="position: relative;"></span>
+<span id="s5block" style="position: absolute;"></span>
 </div>
 <div id="s6" class="slot">
-<span id="s6block" style="position: relative;"></span>
+<span id="s6block" style="position: absolute;"></span>
 </div>
 <br>
 <div id="s7" class="slot">
-<span id="s7block" style="position: relative;"></span>
+<span id="s7block" style="position: absolute;"></span>
 </div>
 <div id="s8" class="slot">
-<span id="s8block" style="position: relative;"></span>
+<span id="s8block" style="position: absolute;"></span>
 </div>
 <div id="s9" class="slot">
-<span id="s9block" style="position: relative;"></span>
+<span id="s9block" style="position: absolute;"></span>
 </div>
 <div id="s10" class="slot">
-<span id="s10block" style="position: relative;"></span>
+<span id="s10block" style="position: absolute;"></span>
 </div>
 <div id="s11" class="slot">
-<span id="s11block" style="position: relative;"></span>
+<span id="s11block" style="position: absolute;"></span>
 </div>
 <div id="s12" class="slot">
-<span id="s12block" style="position: relative;"></span>
+<span id="s12block" style="position: absolute;"></span>
+</div>
 </div>
 <br>
 <span style="color: #277ebf;"><em>Only 5.4 Duodecillion Different Combinations! Someone's got to win, why not you?</em></span>
-</div>
+
 <br>
 <button onclick="return spin();" id="spinbtn" class="btn">SPIN</button>   
 <button onclick="return reset();" class="btn" style="background-color: #b0c4de;">TRY AGAIN</button>  
@@ -187,18 +193,18 @@ function spin(){
    shuffle(speedarr);
 	 	 
 	document.getElementById("spinbtn").disabled = true;
-   $("#s1block").animate({"top": "-805px"}, speedarr[0]);   
-   $("#s2block").animate({"top": "-805px"}, speedarr[1]);
-   $("#s3block").animate({"top": "-805px"}, speedarr[2]);  
-   $("#s4block").animate({"top": "-805px"}, speedarr[3]);
-   $("#s5block").animate({"top": "-805px"}, speedarr[4]);   
-   $("#s6block").animate({"top": "-805px"}, speedarr[5]);
-   $("#s7block").animate({"top": "-805px"}, speedarr[6]);   
-   $("#s8block").animate({"top": "-805px"}, speedarr[7]);
-   $("#s9block").animate({"top": "-805px"}, speedarr[8]);  
-   $("#s10block").animate({"top": "-805px"}, speedarr[9]);
-   $("#s11block").animate({"top": "-805px"}, speedarr[10]);   
-   $("#s12block").animate({"top": "-805px"}, speedarr[11]);
+   $("#s1block").animate({bottom: "10px"}, speedarr[0]);   
+   $("#s2block").animate({bottom: "10px"}, speedarr[1]);
+   $("#s3block").animate({bottom: "10px"}, speedarr[2]);  
+   $("#s4block").animate({bottom: "10px"}, speedarr[3]);
+   $("#s5block").animate({bottom: "10px"}, speedarr[4]);   
+   $("#s6block").animate({bottom: "10px"}, speedarr[5]);
+   $("#s7block").animate({bottom: "10px"}, speedarr[6]);   
+   $("#s8block").animate({bottom: "10px"}, speedarr[7]);
+   $("#s9block").animate({bottom: "10px"}, speedarr[8]);  
+   $("#s10block").animate({bottom: "10px"}, speedarr[9]);
+   $("#s11block").animate({bottom: "10px"}, speedarr[10]);   
+   $("#s12block").animate({bottom: "10px"}, speedarr[11]);
    setTimeout(function(){ 
    	  $("#win").fadeIn(1500);
       var seed = $("#seedhex").val();
@@ -210,18 +216,18 @@ function spin(){
 
 function  reset(){
     document.getElementById("spinbtn").disabled = false;
-	$("#s1block").animate({"top": "-0px"}, "slow");   
-   $("#s2block").animate({"top": "-0px"}, "fast");
-   $("#s3block").animate({"top": "-0px"}, "fast");  
-   $("#s4block").animate({"top": "-0px"}, "fast");
-   $("#s5block").animate({"top": "-0px"}, "fast");   
-   $("#s6block").animate({"top": "-0px"}, "fast");
-   $("#s7block").animate({"top": "-0px"}, "fast");   
-   $("#s8block").animate({"top": "-0px"}, "fast");
-   $("#s9block").animate({"top": "-0px"}, "fast");  
-   $("#s10block").animate({"top": "-0px"}, "fast");
-   $("#s11block").animate({"top": "-0px"}, "fast");   
-   $("#s12block").animate({"top": "-0px"}, "fast");
+	$("#s1block").animate({bottom: "-1200px"}, "slow");   
+   $("#s2block").animate({bottom: "-1200px"}, "fast");
+   $("#s3block").animate({bottom: "-1200px"}, "fast");  
+   $("#s4block").animate({bottom: "-1200px"}, "fast");
+   $("#s5block").animate({bottom: "-1200px"}, "fast");   
+   $("#s6block").animate({bottom: "-1200px"}, "fast");
+   $("#s7block").animate({bottom: "-1200px"}, "fast");   
+   $("#s8block").animate({bottom: "-1200px"}, "fast");
+   $("#s9block").animate({bottom: "-1200px"}, "fast");  
+   $("#s10block").animate({bottom: "-1200px"}, "fast");
+   $("#s11block").animate({bottom: "-1200px"}, "fast");   
+   $("#s12block").animate({bottom: "-1200px"}, "fast");
 	//create new mnemonic
 	var newmnemo = buidl.newMnemonic();
 	console.log(newmnemo);
@@ -263,18 +269,18 @@ function  reset(){
 }
 function testwin(){
     document.getElementById("spinbtn").disabled = false;
-	$("#s1block").animate({"top": "-0px"}, "slow");   
-   $("#s2block").animate({"top": "-0px"}, "fast");
-   $("#s3block").animate({"top": "-0px"}, "fast");  
-   $("#s4block").animate({"top": "-0px"}, "fast");
-   $("#s5block").animate({"top": "-0px"}, "fast");   
-   $("#s6block").animate({"top": "-0px"}, "fast");
-   $("#s7block").animate({"top": "-0px"}, "fast");   
-   $("#s8block").animate({"top": "-0px"}, "fast");
-   $("#s9block").animate({"top": "-0px"}, "fast");  
-   $("#s10block").animate({"top": "-0px"}, "fast");
-   $("#s11block").animate({"top": "-0px"}, "fast");   
-   $("#s12block").animate({"top": "-0px"}, "fast");
+	$("#s1block").animate({bottom: "-1200px"}, "slow");   
+   $("#s2block").animate({bottom: "-1200px"}, "fast");
+   $("#s3block").animate({bottom: "-1200px"}, "fast");  
+   $("#s4block").animate({bottom: "-1200px"}, "fast");
+   $("#s5block").animate({bottom: "-1200px"}, "fast");   
+   $("#s6block").animate({bottom: "-1200px"}, "fast");
+   $("#s7block").animate({bottom: "-1200px"}, "fast");   
+   $("#s8block").animate({bottom: "-1200px"}, "fast");
+   $("#s9block").animate({bottom: "-1200px"}, "fast");  
+   $("#s10block").animate({bottom: "-1200px"}, "fast");
+   $("#s11block").animate({bottom: "-1200px"}, "fast");   
+   $("#s12block").animate({bottom: "-1200px"}, "fast");
 	//create new mnemonic
 	var newmnemo = {words: "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon"}
 	console.log(newmnemo);
