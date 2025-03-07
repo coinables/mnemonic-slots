@@ -1,361 +1,312 @@
 <!DOCTYPE html>
-<html>
-    
+<html lang="en">
 <head>
-<title>Mnemonic Slots</title>
-
-<style>
-body, html {
-	padding-left: 12px;
-	font-family: "Verdana", "sans-serif";
-}
-.slot{
-  overflow: hidden;
-  width: 120px;
-  height: 42px;
-  border: 1px solid #000;
-  display: inline-block;
-  text-align: center;
-  box-shadow: inset 0px 3px 2px #999;
-  background-color: #FAFAFA;
-  position: relative;
-}
-.btn{
-	position: relative;
-	display: inline-block;
-	padding: 15px 25px;
-	background-color: #8ab9f1; 
-}
-#gamecont{
-	width: 99%;
-	text-align: center;
-}
-#layer1{
-	background-color: #cbe7fc;
-	width: 78%;
-	margin: auto;
-	position: relative;
-	padding: 14px;
-	border-radius: 7px;
-	border: 3px solid #3ba5f4;
-}
-#layer2{
-	background-color: #e3f2fd;
-	width: 78%;
-	margin: auto;
-	position: relative;
-	padding: 14px;
-	border-radius: 7px;
-	border: 3px solid #cbe7fc;
-}
-#output{
-	background-color: #5E5D5C;
-	color: #fff;
-	width: 80%;
-	margin: auto;
-	position: relative;
-	padding: 14px;
-	border-radius: 7px;
-	margin-top: 12px;
-	margin-bottom: 12px;
-	text-align: left;
-	font-weight: strong;
-	border: 3px solid #0e0e0e;
-}
-#win{
-	display: none;
-	background-color: #5E5D5C;
-	color: #fff;
-	font-size: 34px;
-	width: 62%;
-	margin: auto;
-	position: relative;
-	padding: 14px;
-	border-radius: 7px;
-	margin-top: 12px;
-	margin-bottom: 12px;
-	text-align: center;
-	font-weight: strong;
-	border: 3px solid #0e0e0e;
-}
-#layer1 span{
-	position: absolute;
-	left: 10px;
-}
-</style>
-<script src="buidl.js"></script>
-<script src="jquery-3.2.1.min.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mnemonic Slots</title>
+    <style>
+        body, html {
+            padding-left: 12px;
+            font-family: "Verdana", "sans-serif";
+        }
+        .slot {
+            overflow: hidden;
+            width: 120px;
+            height: 42px;
+            border: 1px solid #000;
+            display: inline-block;
+            text-align: center;
+            box-shadow: inset 0px 3px 2px #999;
+            background-color: #FAFAFA;
+            position: relative;
+        }
+        .btn {
+            position: relative;
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #8ab9f1;
+        }
+        #gamecont {
+            width: 99%;
+            text-align: center;
+        }
+        #layer1 {
+            background-color: #cbe7fc;
+            width: 78%;
+            margin: auto;
+            position: relative;
+            padding: 14px;
+            border-radius: 7px;
+            border: 3px solid #3ba5f4;
+        }
+        #layer2 {
+            background-color: #e3f2fd;
+            width: 78%;
+            margin: auto;
+            position: relative;
+            padding: 14px;
+            border-radius: 7px;
+            border: 3px solid #cbe7fc;
+        }
+        #output {
+            background-color: #5E5D5C;
+            color: #fff;
+            width: 80%;
+            margin: auto;
+            position: relative;
+            padding: 14px;
+            border-radius: 7px;
+            margin-top: 12px;
+            margin-bottom: 12px;
+            text-align: left;
+            font-weight: bold;
+            border: 3px solid #0e0e0e;
+        }
+        #win {
+            display: none;
+            background-color: #5E5D5C;
+            color: #fff;
+            font-size: 34px;
+            width: 62%;
+            margin: auto;
+            position: relative;
+            padding: 14px;
+            border-radius: 7px;
+            margin-top: 12px;
+            margin-bottom: 12px;
+            text-align: center;
+            font-weight: bold;
+            border: 3px solid #0e0e0e;
+        }
+        #layer1 span {
+            position: absolute;
+            left: 10px;
+        }
+    </style>
+    <script src="buidl.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
 </head>
-    
 <body>
-<div id="gamecont">
-<h1 style="font-size: 52px; font-family: 'Allura';">Mnemonic Slots</h1>
-<div id="layer1">
-<h3>Unlimited Free Spins = Unlimited Fun!</h3>
-<div id="s1" class="slot">
-<span id="s1block" style="position: absolute;"></span>
-</div>
-<div id="s2" class="slot">
-<span id="s2block" style="position: absolute;"></span>
-</div>
-<div id="s3" class="slot">
-<span id="s3block" style="position: absolute;"></span>
-</div>
-<div id="s4" class="slot">
-<span id="s4block" style="position: absolute;"></span>
-</div>
-<div id="s5" class="slot">
-<span id="s5block" style="position: absolute;"></span>
-</div>
-<div id="s6" class="slot">
-<span id="s6block" style="position: absolute;"></span>
-</div>
-<br>
-<div id="s7" class="slot">
-<span id="s7block" style="position: absolute;"></span>
-</div>
-<div id="s8" class="slot">
-<span id="s8block" style="position: absolute;"></span>
-</div>
-<div id="s9" class="slot">
-<span id="s9block" style="position: absolute;"></span>
-</div>
-<div id="s10" class="slot">
-<span id="s10block" style="position: absolute;"></span>
-</div>
-<div id="s11" class="slot">
-<span id="s11block" style="position: absolute;"></span>
-</div>
-<div id="s12" class="slot">
-<span id="s12block" style="position: absolute;"></span>
-</div>
-</div>
-<br>
-<span style="color: #277ebf;"><em>Only 5.4 Duodecillion Different Combinations! Someone's got to win, why not you?</em></span>
+    <div id="gamecont">
+        <h1 style="font-size: 52px; font-family: 'Allura';">Mnemonic Slots</h1>
+        <div id="layer1">
+            <h3>Unlimited Free Spins = Unlimited Fun!</h3>
+            <div id="s1" class="slot"><span id="s1block" style="position: absolute;"></span></div>
+            <div id="s2" class="slot"><span id="s2block" style="position: absolute;"></span></div>
+            <div id="s3" class="slot"><span id="s3block" style="position: absolute;"></span></div>
+            <div id="s4" class="slot"><span id="s4block" style="position: absolute;"></span></div>
+            <div id="s5" class="slot"><span id="s5block" style="position: absolute;"></span></div>
+            <div id="s6" class="slot"><span id="s6block" style="position: absolute;"></span></div>
+            <br>
+            <div id="s7" class="slot"><span id="s7block" style="position: absolute;"></span></div>
+            <div id="s8" class="slot"><span id="s8block" style="position: absolute;"></span></div>
+            <div id="s9" class="slot"><span id="s9block" style="position: absolute;"></span></div>
+            <div id="s10" class="slot"><span id="s10block" style="position: absolute;"></span></div>
+            <div id="s11" class="slot"><span id="s11block" style="position: absolute;"></span></div>
+            <div id="s12" class="slot"><span id="s12block" style="position: absolute;"></span></div>
+        </div>
+        <br>
+        <span style="color: #277ebf;"><em>Only 5.4 Duodecillion Different Combinations! Someone's got to win, why not you?</em></span>
+        <br>
+        <button onclick="return spin();" id="spinbtn" class="btn">SPIN</button>
+        <button onclick="return reset();" class="btn" style="background-color: #b0c4de;">TRY AGAIN</button>
+        <br><br>
+        <div id="win"></div>
+        <div id="layer2">
+            <input type="hidden" id="seedhex">
+            <h3>How do I redeem my funds if I win?</h3>
+            <p>Use the Wallet Import Format (WIF) Private Key or the 12-word mnemonic to import to your wallet.</p>
+            <div id="output"></div>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            reset();
+        }
 
-<br>
-<button onclick="return spin();" id="spinbtn" class="btn">SPIN</button>   
-<button onclick="return reset();" class="btn" style="background-color: #b0c4de;">TRY AGAIN</button>  
-<br><br>
-<div id="win"></div>
-<div id="layer2">
-<input type="hidden" id="seedhex">
-<h3>How do I redeem my funds if I win?</h3>
-<p>Use the Wallet Import Format (WIF) Private Key or the 12-word mnemonic to import to your wallet.</p>
-<div id="output"></div>	
-</div>
-</div>
-<script>	
-window.onload = function (){
-	//create new mnemonic
-	var newmnemo = buidl.newMnemonic();
-	console.log(newmnemo);
-	var hdseed = buidl.mnemonic2SeedHex(newmnemo.words);
-	document.getElementById("seedhex").value = hdseed.seedHex;
-	var explodewords = newmnemo.words.split(" ");
-	var prewords = '<br><br><br>abandon<br><br>ability<br><br>able<br><br>about<br><br>above<br><br>absent<br><br>absorb<br><br>abuse<br><br>cinnamon<br><br>material<br><br>luggage<br><br>scout<br><br>burden<br><br>square<br><br>hat<br><br>trust<br><br>sad<br><br>rain<br><br>teach<br><br>raccoon<br><br>';
-	var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-	if(isFirefox == true){ 
-	var changelines = prewords.slice(0,-15);
-	$("#s1block").html(changelines+explodewords[0]);
-	$("#s2block").html(changelines+explodewords[1]);
-	$("#s3block").html(changelines+explodewords[2]);
-	$("#s4block").html(changelines+explodewords[3]);
-	$("#s5block").html(changelines+explodewords[4]);
-	$("#s6block").html(changelines+explodewords[5]);
-	$("#s7block").html(changelines+explodewords[6]);
-	$("#s8block").html(changelines+explodewords[7]);
-	$("#s9block").html(changelines+explodewords[8]);
-	$("#s10block").html(changelines+explodewords[9]);
-	$("#s11block").html(changelines+explodewords[10]);
-	$("#s12block").html(changelines+explodewords[11]);
-	} else {
-	$("#s1block").html(prewords+explodewords[0]);
-	$("#s2block").html(prewords+explodewords[1]);
-	$("#s3block").html(prewords+explodewords[2]);
-	$("#s4block").html(prewords+explodewords[3]);
-	$("#s5block").html(prewords+explodewords[4]);
-	$("#s6block").html(prewords+explodewords[5]);
-	$("#s7block").html(prewords+explodewords[6]);
-	$("#s8block").html(prewords+explodewords[7]);
-	$("#s9block").html(prewords+explodewords[8]);
-	$("#s10block").html(prewords+explodewords[9]);
-	$("#s11block").html(prewords+explodewords[10]);
-	$("#s12block").html(prewords+explodewords[11]);
-	}
-	
-}
+        function spin() {
+            var speedarr = ["slow", "medium", "fast", 2000, "fast", "fast", 1200, 800, "medium", "fast", 1400, 1800];
+            shuffle(speedarr);
 
-function spin(){
+            document.getElementById("spinbtn").disabled = true;
+            $("#s1block").animate({bottom: "10px"}, speedarr[0]);
+            $("#s2block").animate({bottom: "10px"}, speedarr[1]);
+            $("#s3block").animate({bottom: "10px"}, speedarr[2]);
+            $("#s4block").animate({bottom: "10px"}, speedarr[3]);
+            $("#s5block").animate({bottom: "10px"}, speedarr[4]);
+            $("#s6block").animate({bottom: "10px"}, speedarr[5]);
+            $("#s7block").animate({bottom: "10px"}, speedarr[6]);
+            $("#s8block").animate({bottom: "10px"}, speedarr[7]);
+            $("#s9block").animate({bottom: "10px"}, speedarr[8]);
+            $("#s10block").animate({bottom: "10px"}, speedarr[9]);
+            $("#s11block").animate({bottom: "10px"}, speedarr[10]);
+            $("#s12block").animate({bottom: "10px"}, speedarr[11]);
+            setTimeout(function() {
+                $("#win").fadeIn(1500);
+                var seed = $("#seedhex").val();
+                var addr = buidl.fromHDSeed(seed, 0, 0, 0);
+                getBal(addr.addr, addr.pk);
+            }, 2100);
+        }
 
-   var speedarr = ["slow","medium","fast",2000,"fast","fast",1200,800,"medium","fast",1400,1800];
-   shuffle(speedarr);
-	 	 
-	document.getElementById("spinbtn").disabled = true;
-   $("#s1block").animate({bottom: "10px"}, speedarr[0]);   
-   $("#s2block").animate({bottom: "10px"}, speedarr[1]);
-   $("#s3block").animate({bottom: "10px"}, speedarr[2]);  
-   $("#s4block").animate({bottom: "10px"}, speedarr[3]);
-   $("#s5block").animate({bottom: "10px"}, speedarr[4]);   
-   $("#s6block").animate({bottom: "10px"}, speedarr[5]);
-   $("#s7block").animate({bottom: "10px"}, speedarr[6]);   
-   $("#s8block").animate({bottom: "10px"}, speedarr[7]);
-   $("#s9block").animate({bottom: "10px"}, speedarr[8]);  
-   $("#s10block").animate({bottom: "10px"}, speedarr[9]);
-   $("#s11block").animate({bottom: "10px"}, speedarr[10]);   
-   $("#s12block").animate({bottom: "10px"}, speedarr[11]);
-   setTimeout(function(){ 
-   	  $("#win").fadeIn(1500);
-      var seed = $("#seedhex").val();
-      var addr = buidl.fromHDSeed(seed,0,0,0);
-      var balout = getBal(addr.addr, addr.pk); 
-   }, 2100);
-   
-}
+        function reset() {
+            document.getElementById("spinbtn").disabled = false;
+            $("#s1block").animate({bottom: "-1200px"}, "slow");
+            $("#s2block").animate({bottom: "-1200px"}, "fast");
+            $("#s3block").animate({bottom: "-1200px"}, "fast");
+            $("#s4block").animate({bottom: "-1200px"}, "fast");
+            $("#s5block").animate({bottom: "-1200px"}, "fast");
+            $("#s6block").animate({bottom: "-1200px"}, "fast");
+            $("#s7block").animate({bottom: "-1200px"}, "fast");
+            $("#s8block").animate({bottom: "-1200px"}, "fast");
+            $("#s9block").animate({bottom: "-1200px"}, "fast");
+            $("#s10block").animate({bottom: "-1200px"}, "fast");
+            $("#s11block").animate({bottom: "-1200px"}, "fast");
+            $("#s12block").animate({bottom: "-1200px"}, "fast");
+            // Create new mnemonic
+            var newmnemo = buidl.newMnemonic();
+            console.log(newmnemo);
+            var hdseed = buidl.mnemonic2SeedHex(newmnemo.words);
+            document.getElementById("seedhex").value = hdseed.seedHex;
+            var explodewords = newmnemo.words.split(" ");
+            var prewords = '<br><br><br>abandon<br><br>ability<br><br>able<br><br>about<br><br>above<br><br>absent<br><br>absorb<br><br>abuse<br><br>cinnamon<br><br>material<br><br>luggage<br><br>scout<br><br>burden<br><br>square<br><br>hat<br><br>trust<br><br>sad<br><br>rain<br><br>teach<br><br>raccoon<br><br>';
+            var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+            if (isFirefox) {
+                var changelines = prewords.slice(0, -15);
+                $("#s1block").html(changelines + explodewords[0]);
+                $("#s2block").html(changelines + explodewords[1]);
+                $("#s3block").html(changelines + explodewords[2]);
+                $("#s4block").html(changelines + explodewords[3]);
+                $("#s5block").html(changelines + explodewords[4]);
+                $("#s6block").html(changelines + explodewords[5]);
+                $("#s7block").html(changelines + explodewords[6]);
+                $("#s8block").html(changelines + explodewords[7]);
+                $("#s9block").html(changelines + explodewords[8]);
+                $("#s10block").html(changelines + explodewords[9]);
+                $("#s11block").html(changelines + explodewords[10]);
+                $("#s12block").html(changelines + explodewords[11]);
+            } else {
+                $("#s1block").html(prewords + explodewords[0]);
+                $("#s2block").html(prewords + explodewords[1]);
+                $("#s3block").html(prewords + explodewords[2]);
+                $("#s4block").html(prewords + explodewords[3]);
+                $("#s5block").html(prewords + explodewords[4]);
+                $("#s6block").html(prewords + explodewords[5]);
+                $("#s7block").html(prewords + explodewords[6]);
+                $("#s8block").html(prewords + explodewords[7]);
+                $("#s9block").html(prewords + explodewords[8]);
+                $("#s10block").html(prewords + explodewords[9]);
+                $("#s11block").html(prewords + explodewords[10]);
+                $("#s12block").html(prewords + explodewords[11]);
+            }
+            $("#output").html('');
+            $("#win").fadeOut(1500);
+        }
 
-function  reset(){
-    document.getElementById("spinbtn").disabled = false;
-	$("#s1block").animate({bottom: "-1200px"}, "slow");   
-   $("#s2block").animate({bottom: "-1200px"}, "fast");
-   $("#s3block").animate({bottom: "-1200px"}, "fast");  
-   $("#s4block").animate({bottom: "-1200px"}, "fast");
-   $("#s5block").animate({bottom: "-1200px"}, "fast");   
-   $("#s6block").animate({bottom: "-1200px"}, "fast");
-   $("#s7block").animate({bottom: "-1200px"}, "fast");   
-   $("#s8block").animate({bottom: "-1200px"}, "fast");
-   $("#s9block").animate({bottom: "-1200px"}, "fast");  
-   $("#s10block").animate({bottom: "-1200px"}, "fast");
-   $("#s11block").animate({bottom: "-1200px"}, "fast");   
-   $("#s12block").animate({bottom: "-1200px"}, "fast");
-	//create new mnemonic
-	var newmnemo = buidl.newMnemonic();
-	console.log(newmnemo);
-	var hdseed = buidl.mnemonic2SeedHex(newmnemo.words);
-	document.getElementById("seedhex").value = hdseed.seedHex;
-	var explodewords = newmnemo.words.split(" ");
-	var prewords = '<br><br><br>abandon<br><br>ability<br><br>able<br><br>about<br><br>above<br><br>absent<br><br>absorb<br><br>abuse<br><br>cinnamon<br><br>material<br><br>luggage<br><br>scout<br><br>burden<br><br>square<br><br>hat<br><br>trust<br><br>sad<br><br>rain<br><br>teach<br><br>raccoon<br><br>';
-	var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-	if(isFirefox == true){ 
-	var changelines = prewords.slice(0,-15);
-	$("#s1block").html(changelines+explodewords[0]);
-	$("#s2block").html(changelines+explodewords[1]);
-	$("#s3block").html(changelines+explodewords[2]);
-	$("#s4block").html(changelines+explodewords[3]);
-	$("#s5block").html(changelines+explodewords[4]);
-	$("#s6block").html(changelines+explodewords[5]);
-	$("#s7block").html(changelines+explodewords[6]);
-	$("#s8block").html(changelines+explodewords[7]);
-	$("#s9block").html(changelines+explodewords[8]);
-	$("#s10block").html(changelines+explodewords[9]);
-	$("#s11block").html(changelines+explodewords[10]);
-	$("#s12block").html(changelines+explodewords[11]);
-	} else {
-	$("#s1block").html(prewords+explodewords[0]);
-	$("#s2block").html(prewords+explodewords[1]);
-	$("#s3block").html(prewords+explodewords[2]);
-	$("#s4block").html(prewords+explodewords[3]);
-	$("#s5block").html(prewords+explodewords[4]);
-	$("#s6block").html(prewords+explodewords[5]);
-	$("#s7block").html(prewords+explodewords[6]);
-	$("#s8block").html(prewords+explodewords[7]);
-	$("#s9block").html(prewords+explodewords[8]);
-	$("#s10block").html(prewords+explodewords[9]);
-	$("#s11block").html(prewords+explodewords[10]);
-	$("#s12block").html(prewords+explodewords[11]);
-	}
-	$("#output").html('');
-	$("#win").fadeOut(1500);
-}
-function testwin(){
-    document.getElementById("spinbtn").disabled = false;
-	$("#s1block").animate({bottom: "-1200px"}, "slow");   
-   $("#s2block").animate({bottom: "-1200px"}, "fast");
-   $("#s3block").animate({bottom: "-1200px"}, "fast");  
-   $("#s4block").animate({bottom: "-1200px"}, "fast");
-   $("#s5block").animate({bottom: "-1200px"}, "fast");   
-   $("#s6block").animate({bottom: "-1200px"}, "fast");
-   $("#s7block").animate({bottom: "-1200px"}, "fast");   
-   $("#s8block").animate({bottom: "-1200px"}, "fast");
-   $("#s9block").animate({bottom: "-1200px"}, "fast");  
-   $("#s10block").animate({bottom: "-1200px"}, "fast");
-   $("#s11block").animate({bottom: "-1200px"}, "fast");   
-   $("#s12block").animate({bottom: "-1200px"}, "fast");
-	//create new mnemonic
-	var newmnemo = {words: "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon"}
-	console.log(newmnemo);
-	var hdseed = buidl.mnemonic2SeedHex(newmnemo.words);
-	document.getElementById("seedhex").value = hdseed.seedHex;
-	var explodewords = newmnemo.words.split(" ");
-	var prewords = '<br><br><br>abandon<br><br>ability<br><br>able<br><br>about<br><br>above<br><br>absent<br><br>absorb<br><br>abuse<br><br>cinnamon<br><br>material<br><br>luggage<br><br>scout<br><br>burden<br><br>square<br><br>hat<br><br>trust<br><br>sad<br><br>rain<br><br>teach<br><br>raccoon<br><br>';
-	var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-	if(isFirefox == true){ 
-	var changelines = prewords.slice(0,-15);
-	$("#s1block").html(changelines+explodewords[0]);
-	$("#s2block").html(changelines+explodewords[1]);
-	$("#s3block").html(changelines+explodewords[2]);
-	$("#s4block").html(changelines+explodewords[3]);
-	$("#s5block").html(changelines+explodewords[4]);
-	$("#s6block").html(changelines+explodewords[5]);
-	$("#s7block").html(changelines+explodewords[6]);
-	$("#s8block").html(changelines+explodewords[7]);
-	$("#s9block").html(changelines+explodewords[8]);
-	$("#s10block").html(changelines+explodewords[9]);
-	$("#s11block").html(changelines+explodewords[10]);
-	$("#s12block").html(changelines+explodewords[11]);
-	} else {
-	$("#s1block").html(prewords+explodewords[0]);
-	$("#s2block").html(prewords+explodewords[1]);
-	$("#s3block").html(prewords+explodewords[2]);
-	$("#s4block").html(prewords+explodewords[3]);
-	$("#s5block").html(prewords+explodewords[4]);
-	$("#s6block").html(prewords+explodewords[5]);
-	$("#s7block").html(prewords+explodewords[6]);
-	$("#s8block").html(prewords+explodewords[7]);
-	$("#s9block").html(prewords+explodewords[8]);
-	$("#s10block").html(prewords+explodewords[9]);
-	$("#s11block").html(prewords+explodewords[10]);
-	$("#s12block").html(prewords+explodewords[11]);
-	}
-	$("#output").html('');
-	$("#win").fadeOut(1500);
-	alert("Test initiated, click on Spin");
-}
+        function testwin() {
+            document.getElementById("spinbtn").disabled = false;
+            $("#s1block").animate({bottom: "-1200px"}, "slow");
+            $("#s2block").animate({bottom: "-1200px"}, "fast");
+            $("#s3block").animate({bottom: "-1200px"}, "fast");
+            $("#s4block").animate({bottom: "-1200px"}, "fast");
+            $("#s5block").animate({bottom: "-1200px"}, "fast");
+            $("#s6block").animate({bottom: "-1200px"}, "fast");
+            $("#s7block").animate({bottom: "-1200px"}, "fast");
+            $("#s8block").animate({bottom: "-1200px"}, "fast");
+            $("#s9block").animate({bottom: "-1200px"}, "fast");
+            $("#s10block").animate({bottom: "-1200px"}, "fast");
+            $("#s11block").animate({bottom: "-1200px"}, "fast");
+            $("#s12block").animate({bottom: "-1200px"}, "fast");
+            // Create test mnemonic
+            var newmnemo = {words: "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon"};
+            console.log(newmnemo);
+            var hdseed = buidl.mnemonic2SeedHex(newmnemo.words);
+            document.getElementById("seedhex").value = hdseed.seedHex;
+            var explodewords = newmnemo.words.split(" ");
+            var prewords = '<br><br><br>abandon<br><br>ability<br><br>able<br><br>about<br><br>above<br><br>absent<br><br>absorb<br><br>abuse<br><br>cinnamon<br><br>material<br><br>luggage<br><br>scout<br><br>burden<br><br>square<br><br>hat<br><br>trust<br><br>sad<br><br>rain<br><br>teach<br><br>raccoon<br><br>';
+            var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+            if (isFirefox) {
+                var changelines = prewords.slice(0, -15);
+                $("#s1block").html(changelines + explodewords[0]);
+                $("#s2block").html(changelines + explodewords[1]);
+                $("#s3block").html(changelines + explodewords[2]);
+                $("#s4block").html(changelines + explodewords[3]);
+                $("#s5block").html(changelines + explodewords[4]);
+                $("#s6block").html(changelines + explodewords[5]);
+                $("#s7block").html(changelines + explodewords[6]);
+                $("#s8block").html(changelines + explodewords[7]);
+                $("#s9block").html(changelines + explodewords[8]);
+                $("#s10block").html(changelines + explodewords[9]);
+                $("#s11block").html(changelines + explodewords[10]);
+                $("#s12block").html(changelines + explodewords[11]);
+            } else {
+                $("#s1block").html(prewords + explodewords[0]);
+                $("#s2block").html(prewords + explodewords[1]);
+                $("#s3block").html(prewords + explodewords[2]);
+                $("#s4block").html(prewords + explodewords[3]);
+                $("#s5block").html(prewords + explodewords[4]);
+                $("#s6block").html(prewords + explodewords[5]);
+                $("#s7block").html(prewords + explodewords[6]);
+                $("#s8block").html(prewords + explodewords[7]);
+                $("#s9block").html(prewords + explodewords[8]);
+                $("#s10block").html(prewords + explodewords[9]);
+                $("#s11block").html(prewords + explodewords[10]);
+                $("#s12block").html(prewords + explodewords[11]);
+            }
+            $("#output").html('');
+            $("#win").fadeOut(1500);
+            alert("Test initiated, click on Spin");
+        }
 
-function getBal(param, pk){
-			$.ajax({
-			async: false,
-			type: "GET",
-			url: "https://sochain.com/api/v2/address/BTC/"+param,
-			success: function(result) {
-				api = result.data;
-				document.getElementById("output").innerHTML = "Address: "+param+"<br>Private Key WIF: "+pk+"<br>Derivation Path: m/44'/0'/0'/0/0<br>Total Received: "+api.received_value+"<br>Current Balance: "+api.balance;
-				document.getElementById("win").innerHTML = '<span style="font-size: 14px; font-weight: normal;">YOU WIN:</span><br>'+api.balance+' <span style="font-size: 14px; font-weight: normal;">BTC</span>';
-				if(api.received_value > 0){ alert("Activity has been detected you may want to investigate this mnemonic further") }
-			}
-		});	
-}
+        function getBal(address, pk) {
+            $.ajax({
+                async: false,
+                type: "GET",
+                url: `https://mempool.space/api/address/${address}`,
+                success: function(result) {
+                    var balance = result.chain_stats.funded_txo_sum - result.chain_stats.spent_txo_sum;
+                    var received = result.chain_stats.funded_txo_sum;
+                    document.getElementById("output").innerHTML = 
+                        "Address: " + address + "<br>" +
+                        "Private Key WIF: " + pk + "<br>" +
+                        "Derivation Path: m/44'/0'/0'/0/0<br>" +
+                        "Total Received: " + (received / 100000000).toFixed(8) + "<br>" +
+                        "Current Balance: " + (balance / 100000000).toFixed(8);
+                    document.getElementById("win").innerHTML = 
+                        '<span style="font-size: 14px; font-weight: normal;">YOU WIN:</span><br>' +
+                        (balance / 100000000).toFixed(8) + ' <span style="font-size: 14px; font-weight: normal;">BTC</span>';
+                    if (received > 0) {
+                        alert("Activity has been detected, you may want to investigate this mnemonic further");
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching balance:", error);
+                    document.getElementById("output").innerHTML = "Error fetching balance for address: " + address;
+                }
+            });
+        }
 
-function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  while (0 !== currentIndex) {
-
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-}
-
-</script>	
-<br>
-<center>How to know if it's working? <a href="#" onclick="return testwin();">Test Win</a>
-<br><br>
-<span style="font-size: 10px; color: #a1a1a1;">Built using buidl.js and sochain API - <a href="https://github.com/coinables/mnemonic-slots">view on github</a></span></center>
+        function shuffle(array) {
+            var currentIndex = array.length, temporaryValue, randomIndex;
+            while (0 !== currentIndex) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+            return array;
+        }
+    </script>
+    <br>
+    <center>
+        How to know if it's working? <a href="#" onclick="return testwin();">Test Win</a>
+        <br><br>
+        <span style="font-size: 10px; color: #a1a1a1;">
+            Built using buidl.js and mempool.space API - 
+            <a href="https://github.com/coinables/mnemonic-slots">view on github</a>
+        </span>
+    </center>
 </body>
 </html>
